@@ -1,0 +1,58 @@
+Have a nice top-level makefile or bash / python scripts that evolves with each assignment
+
+├── 220120005_210010040_assignment1.zip
+├── Assignment1.pdf
+├── Assignment2.pdf
+├── Assignment3.pdf
+├── instrumentation_synthesizer
+│   ├── instrumentation_tool.py
+│   ├── makefile
+│   └── README
+├── Monitor
+│   └── Multi_Server_ref_2.cpp
+├── Monitor_synthesizer
+│   ├── makefile
+│   ├── monitor_tool.py
+│   └── README
+├── README
+├── SUV
+│   ├── makefile
+│   ├── train_station_simulator.cpp
+│   └── train_station_simulator_racy_logic.cpp
+└── Tooled_SUV
+    ├── Multi_Client_ref_2.cpp
+    └── train_station_simulator_mon_ref.cpp
+
+
+before running the make file make sure the SUV is in the deafult format as after Ctrl + Shift + I in VS Code
+
+run makefile from instrumentation_synthesizer as follows
+
+To run the script with custom parameters:
+You can specify the parameters directly in the command line. For example:
+
+make run input_cpp=/path/to/your/input.cpp sampling_interval=100 output_cpp=/path/to/your/output.cpp output_txt=/path/to/your/output.txt hostname=your_hostname port=12345
+
+
+
+Then run the makefile in Monitor_synthesizer as follows
+
+Run the Tool with Command-Line Parameters
+
+If you want to run the run_tool target and provide your own parameters for port and output_cpp, you can do so by specifying them in the command line. For example:
+
+make run_tool port=12345 output_cpp=/path/to/your/output_file.cpp num_of_booleans=<num_of_booleans output by the Tooled_SUV>
+
+
+
+then just compile both the output scripts 
+
+and run Monitor.cpp followed by Tooled_SUV.cpp 
+
+
+
+output from Monitor will be stored in recieved_data.txt 
+
+and
+
+output from Tooled_SUV will be stored in output.txt 
